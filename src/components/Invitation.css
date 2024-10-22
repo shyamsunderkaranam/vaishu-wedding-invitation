@@ -193,12 +193,19 @@ body, html {
         height: 150px;
         font-size: medium;
       }
-      .card h2 {
+      .card h2, .card h3, .card p {
         font-size: 1em;
         padding: 0 5px;
       }    
       .header h1 {
         font-size: 2em;
+      }
+      .detail-card {
+        width: 90%;
+        padding: 25px;
+      }
+      .invitee-card {
+        width: 90%;
       }
   }
   @keyframes fadeAndMove {
