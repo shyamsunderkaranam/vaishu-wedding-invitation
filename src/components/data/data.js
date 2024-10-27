@@ -5,7 +5,7 @@ const wedding = {
         details: "Rejinthal Village,Zaheerabad, Mirzapur[B], Telangana 502249", 
         map: "https://maps.app.goo.gl/Vwajr2koTKJmPEmV7"
     },
-    date: { title: 'Date & Time:', details: "8th December 2024 and Muhurtham time" },
+    date: { title: 'Date & Time:', details: "8th December 2024 and Muhurtham time 8:40 AM" },
     invitees: ["KULKARNI'S FAMILY"] // Add more invitees as needed
 }
 
