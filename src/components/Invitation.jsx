@@ -1,11 +1,19 @@
 import React, { useEffect, useRef } from 'react';
 import wedding from './data/data';
 import './Invitation.css';
-import './loader.css'
+
+// import FlowersEffect from './FlowersEffect';
+import AOS from 'aos';
+
+import 'aos/dist/aos.css';
+// import './typewrite.css';
+
 const Invitation = () => {
   const mainCardsRef = useRef(null);
-  const lastScrollY = useRef(0);
+  // const lastScrollY = useRef(0);
+  
   useEffect(() => {
+    AOS.init();
     const leftCard = document.querySelector('.left-card');
     const rightCard = document.querySelector('.right-card');
     
@@ -14,23 +22,23 @@ const Invitation = () => {
       rightCard.style.transform = 'translateX(0)';
     }, 500);
 
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY.current) {
-        leftCard.classList.add('disappear');
-        rightCard.classList.add('disappear');
-      } else {
-        leftCard.classList.remove('disappear');
-        rightCard.classList.remove('disappear');
-      }
-      lastScrollY.current = currentScrollY;
-    };
+    // const handleScroll = () => {
+    //   const currentScrollY = window.scrollY;
+    //   if (currentScrollY > lastScrollY.current) {
+    //     leftCard.classList.add('disappear');
+    //     rightCard.classList.add('disappear');
+    //   } else {
+    //     leftCard.classList.remove('disappear');
+    //     rightCard.classList.remove('disappear');
+    //   }
+    //   lastScrollY.current = currentScrollY;
+    // };
 
-    window.addEventListener('scroll', handleScroll);
+    // window.addEventListener('scroll', handleScroll);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    // return () => {
+    //   window.removeEventListener('scroll', handleScroll);
+    // };
     /*
     const observerOptions = {
       root: null,
@@ -73,9 +81,10 @@ const Invitation = () => {
   return (
     <div className="App">
       <header className="header">
-        <h1>OUR WEDDING INVITATION</h1>
+        <h1>KULKARNI'S WEDDING INVITATION</h1>
       </header>
       <main>
+        {/* <FlowersEffect /> */}
         <section className="main-cards" ref={mainCardsRef}>
           <div className="card left-card">
             <img src={bride.img} alt="Bride" />
@@ -92,19 +101,33 @@ const Invitation = () => {
           </div>
         </section>
         <section className="details">
-          <div className="card detail-card">
+        
+          
+          <div className="card detail-card"
+          data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000"
+          >
             <h3>Venue:</h3>
             <p>{venue.title}</p>
             <p>{venue.details}</p>
             <a href={venue.map} target="_blank" rel="noreferrer">View on Map</a>
           </div>
-          <div className="card detail-card">
+          
+          <div className="card detail-card"
+          data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000"
+          >
             <h3>{date.title}</h3>
             <p>{date.details}</p>
           </div>
         </section>
         <section className="invitees">
-          <div  className="card invitee-card">
+          <div  className="card invitee-card"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          >
             <h3>Invited By:</h3>
               {invitees.map((invitee, index) => (
                 <p key={index}>{invitee+", "}</p>
