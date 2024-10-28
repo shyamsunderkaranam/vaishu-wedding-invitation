@@ -184,7 +184,7 @@ body, html {
         height: 150px;
         font-size: medium;
       }
-      .card h2, .card h3, .card p {
+      .card h2, .card h3, .card p{
         font-size: 1em;
         padding: 0 5px;
       }    
@@ -192,12 +192,14 @@ body, html {
         font-size: 2em;
       }
       .detail-card {
-        width: 90%;
-        padding: 25px;
+        width: 80%;
+        height: auto;
+        padding: 5px;
       }
       .invitee-card {
         width: 90%;
       }
+      
   }
   @keyframes fadeAndMove {
     0% {
