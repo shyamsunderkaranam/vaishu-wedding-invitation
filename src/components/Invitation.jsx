@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import wedding from './data/data';
 import './Invitation.css';
-
+import confetti from 'canvas-confetti';
 // import FlowersEffect from './FlowersEffect';
 import AOS from 'aos';
 
@@ -66,6 +66,13 @@ const Invitation = () => {
         observer.unobserve(mainCardsRef.current);
       }
     };*/
+    setTimeout(()=>{
+      confetti({
+      particleCount: 100,
+      spread: 160,
+      origin: { y: 0.6 },
+    });
+  }, 4000);
 
   }, []);
 
@@ -115,7 +122,7 @@ const Invitation = () => {
           </div>
           
           <div className="card detail-card"
-          data-aos="flip-left"
+          data-aos="flip-right"
           data-aos-easing="ease-out-cubic"
           data-aos-duration="2000"
           >
