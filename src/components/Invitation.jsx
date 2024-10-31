@@ -72,7 +72,7 @@ const Invitation = () => {
       spread: 160,
       origin: { y: 0.6 },
     });
-  }, 3200);
+  }, 3000);
 
   }, []);
 
